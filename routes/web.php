@@ -38,6 +38,7 @@ Route::group(['middleware' => 'invoiceCheck'],function(){
     Route::post('update-user/{id}',[InvoiceController::class,'update'])->name('invoice.update');
     Route::get('invoice-delete/{id}',[InvoiceController::class,'destroy'])->name('invoice.delete');
     Route::get('invoice-MailSend/{id}',[InvoiceController::class,'sendmail'])->name('invoice.sendmail');
+    Route::get('user.details/{id}',[InvoiceController::class,'show'])->name('user.details');
 });
 
 

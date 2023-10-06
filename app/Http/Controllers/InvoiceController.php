@@ -29,7 +29,7 @@ class InvoiceController extends Controller
    
     {
         
-        return $request->all();
+       // return $request->all();
         $validatedData = $request->validate([
         'qty' => 'required|integer',
         'amount' => 'required|numeric',
@@ -110,6 +110,11 @@ class InvoiceController extends Controller
             //'file_upload' => request(file_upload),
         ]);
         return redirect()->route('invoice.view');
+    }
+    public function show($id){
+        $viewuser = Invoice::find($id);
+        //dd ($viewuser);
+        return view ('invoice.show',compact('viewuser'));
     }
 
     
